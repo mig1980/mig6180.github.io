@@ -1,0 +1,147 @@
+<style>
+  .myblock-book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin: 32px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .myblock-book-card {
+    max-width: 350px;
+    margin: 0 auto;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0 2px 8px #EEE;
+    box-sizing: border-box;
+  }
+  
+  .myblock-book-card img {
+    width: 100%;
+    height: 390px;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    background: #f9f9f9;
+    display: block;
+    will-change: transform;
+  }
+  
+  .myblock-book-card a:focus {
+    outline: 2px solid #0073e6;
+    outline-offset: 2px;
+  }
+  
+  .myblock-book-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    font-family: inherit;
+    font-weight: inherit;
+  }
+  
+  .myblock-book-card p {
+    margin-bottom: 8px;
+  }
+  
+  .myblock-book-card .book-author,
+  .myblock-book-card .book-why {
+    font-weight: 600;
+  }
+  
+  .myblock-amazon-link {
+    color: #0073e6;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+    font-family: inherit;
+  }
+  .myblock-amazon-link:hover {
+    color: #005bb5;
+  }
+  .myblock-amazon-link:focus {
+    outline: 2px solid #0073e6;
+    outline-offset: 2px;
+  }
+
+@media (max-width: 900px) {
+  .myblock-book-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .myblock-book-card {
+    max-width: 100%;
+    margin: 0;
+  }
+  .myblock-book-card img {
+    height: 240px;
+  }
+}
+</style>
+
+<div class="myblock-book-grid">
+  <!-- Book 1 -->
+  <div class="myblock-book-card">
+    <a href="https://a.co/d/iar4v6s" target="_blank" rel="noopener nofollow">
+      <img src="https://quantuminvestor.net/wp-content/uploads/2025/10/FinanceialManagerialAccounting.jpg" 
+           alt="Financial and Managerial Accounting book cover"
+           width="350" 
+           height="390"
+           loading="lazy">
+    </a>
+    <h3>Financial and Managerial Accounting</h3>
+    <p class="book-author">By John J. Wild et al.</p>
+    <p class="book-why">Why I recommend this book</p>
+    <p>I've always managed my own investments, so getting a handle on accounting felt pretty essential. This book was actually one of my main study guides in college, and it gave me a solid grip on all the accounting basics. It's the one that really helped me understand how to read financial statements and spot what's actually going on with a company's numbers.</p>
+    <a href="https://a.co/d/iar4v6s" target="_blank" rel="noopener nofollow" class="myblock-amazon-link">View on Amazon</a>
+  </div>
+  
+  <!-- Book 2 -->
+  <div class="myblock-book-card">
+    <a href="https://a.co/d/7fRui5O" target="_blank" rel="noopener nofollow">
+      <img src="https://quantuminvestor.net/wp-content/uploads/2025/10/CorporateFinance.jpg" 
+           alt="Fundamentals of Corporate Finance 2024 book cover"
+           width="350" 
+           height="390"
+           loading="lazy">
+    </a>
+    <h3>Fundamentals of Corporate Finance</h3>
+    <p class="book-author">By Stephen Ross et al.</p>
+    <p class="book-why">Why I recommend this book</p>
+    <p>I first picked up this book as part of my college coursework, and it's still one I refer back to when I want a quick refresher or a deeper dive into finance concepts. It really helped me get comfortable with how big investment decisions get made.</p>
+    <a href="https://a.co/d/7fRui5O" target="_blank" rel="noopener nofollow" class="myblock-amazon-link">View on Amazon</a>
+  </div>
+  
+  <!-- Book 3 -->
+  <div class="myblock-book-card">
+    <a href="https://a.co/d/aoVv4iY" target="_blank" rel="noopener nofollow">
+      <img src="https://quantuminvestor.net/wp-content/uploads/2025/10/TheLittleBook.jpg" 
+           alt="The Little Book of Common Sense Investing cover"
+           width="350" 
+           height="390"
+           loading="lazy">
+    </a>
+    <h3>The Little Book of Common Sense Investing</h3>
+    <p class="book-author">By John C. Bogle</p>
+    <p class="book-why">Why I recommend this book</p>
+    <p>Bogle's take on index investing really lines up with how I like to build wealth for the long run and keep risk under control. This book makes the whole market way less intimidating by breaking things down simply, and it's all about keeping costs low. Honestly, after you read this one, you'll probably feel like you can skip all the other investment books—and you won't feel the need to chase single stocks anymore. Sometimes the smartest move is just sticking with disciplined, passive investing for steady growth.</p>
+    <a href="https://a.co/d/aoVv4iY" target="_blank" rel="noopener nofollow" class="myblock-amazon-link">View on Amazon</a>
+  </div>
+  
+  <!-- Book 4 -->
+  <div class="myblock-book-card">
+    <a href="https://a.co/d/5F2uUQq" target="_blank" rel="noopener nofollow">
+      <img src="https://quantuminvestor.net/wp-content/uploads/2025/10/IntelligentInvestorjpg.jpg" 
+           alt="The Intelligent Investor book cover"
+           width="350" 
+           height="390"
+           loading="lazy">
+    </a>
+    <h3>The Intelligent Investor</h3>
+    <p class="book-author">By Benjamin Graham</p>
+    <p class="book-why">Why I recommend this book</p>
+    <p>Graham's classic advice still holds up, especially when markets get rocky. What I appreciate most is how he keeps things grounded in real value and the idea of having a margin of safety. This book helps cut through all the hype and noise so you can actually make solid, rational choices—whether you're crunching the numbers old-school or experimenting with AI tools. If you want to stay calm and smart in the middle of the market's ups and downs, this is the one you should have on your shelf.</p>
+    <a href="https://a.co/d/5F2uUQq" target="_blank" rel="noopener nofollow" class="myblock-amazon-link">View on Amazon</a>
+  </div>
+</div>
