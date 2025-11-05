@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Investor Digest - Header Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1>Quantum Investor Digest</h1>
+                <p class="subtitle">Weekly Header Generator</p>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Format Selection -->
+            <section class="format-section">
+                <h2>Select Platform Format</h2>
+                <div class="format-buttons" id="formatButtons">
+                    <button class="format-btn active" data-format="blog" data-width="1200" data-height="630">
+                        <span class="format-icon">🌐</span>
+                        <span class="format-name">Blog Header</span>
+                        <span class="format-size">1200×630</span>
+                    </button>
+                    <button class="format-btn" data-format="twitter" data-width="1200" data-height="675">
+                        <span class="format-icon">𝕏</span>
+                        <span class="format-name">X (Twitter)</span>
+                        <span class="format-size">1200×675</span>
+                    </button>
+                    <button class="format-btn" data-format="linkedin" data-width="1200" data-height="627">
+                        <span class="format-icon">💼</span>
+                        <span class="format-name">LinkedIn</span>
+                        <span class="format-size">1200×627</span>
+                    </button>
+                    <button class="format-btn" data-format="instagram" data-width="1080" data-height="1080">
+                        <span class="format-icon">📸</span>
+                        <span class="format-name">Instagram</span>
+                        <span class="format-size">1080×1080</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Customization Panel -->
+            <section class="customization-section">
+                <h2>Customize Content</h2>
+                
+                <div class="input-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="weekNumber">Week Number</label>
+                        <input type="text" id="weekNumber" class="form-control" placeholder="Week 6" value="Week 6">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="headline">Main Headline</label>
+                        <input type="text" id="headline" class="form-control" placeholder="GenAI-Managed Stocks Portfolio" value="GenAI-Managed Stocks Portfolio">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="subheadline">Performance Metric</label>
+                        <input type="text" id="subheadline" class="form-control" placeholder="+4.58% Total Return" value="+4.58% Total Return">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="customText">Optional Text</label>
+                        <input type="text" id="customText" class="form-control" placeholder="Additional info...">
+                    </div>
+                </div>
+
+                <!-- Presets -->
+                <div class="presets-section">
+                    <h3>Quick Presets</h3>
+                    <div class="preset-buttons" id="presetButtons"></div>
+                </div>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="preview-section">
+                <div class="preview-header">
+                    <h2>Preview &amp; Download</h2>
+                    <div class="preview-actions">
+                        <button class="btn btn--primary" id="downloadBtn">📥 Download PNG</button>
+                        <button class="btn btn--secondary" id="downloadWebpBtn">📥 Download WebP</button>
+                    </div>
+                </div>
+                
+                <div class="preview-container" id="previewContainer">
+                    <canvas id="previewCanvas" width="1200" height="630"></canvas>
+                </div>
+            </section>
+
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
