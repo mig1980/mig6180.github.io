@@ -1,274 +1,207 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://quantuminvestor.net; style-src 'unsafe-inline';">
-    <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=()">
-    <!-- Performance & SEO additions -->
-    <meta name="description" content="Michael Gavrilov - AI-focused investing enthusiast exploring generative AI's impact on personal investing." />
-    <link rel="preconnect" href="https://quantuminvestor.net" crossorigin>
-    <link rel="canonical" href="https://mig6180.github.io/">
-    <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#8b5cf6">
-    <title>About Me - Michael Gavrilov</title>
-    <style>
-        :root {
-            --color-purple: #8b5cf6;
-            --color-text-dark: #1f2937;
-            --color-text-light: #4b5563;
-            --color-white: #ffffff;
-            --color-gray-light: #f3f4f6;
-            --color-black: #000000;
-        }
+<style>
+* {
+  box-sizing: border-box;
+}
+.myblock-about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 40px;
+  font-family: inherit;
+}
+.myblock-profile-image {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 40px auto;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.myblock-profile-image:hover {
+  transform: scale(1.03);
+}
+.myblock-name-section {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.myblock-name {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: #1f2937;
+  line-height: 1.2;
+}
+.myblock-tagline {
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.myblock-email-btn {
+  display: inline-block;
+  background-color: #8b5cf6;
+  color: #fff;
+  padding: 14px 40px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 2px solid #8b5cf6;
+  cursor: pointer;
+}
+.myblock-email-btn:hover {
+  background-color: transparent;
+  color: #8b5cf6;
+  border-color: #8b5cf6;
+}
+.myblock-email-btn:focus,
+.myblock-action-btn:focus {
+  outline: 3px solid #1f2937;
+  outline-offset: 2px;
+}
+.myblock-email-btn:focus:not(:focus-visible),
+.myblock-action-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+.myblock-about-section {
+  background-color: #8b5cf6;
+  padding: 60px 50px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.myblock-about-content {
+  max-width: 100%;
+}
+.myblock-about-title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: #fff;
+  position: relative;
+  padding-bottom: 20px;
+}
+.myblock-about-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background-color: #fff;
+}
+.myblock-about-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #fff;
+  margin-bottom: 40px;
+}
+.myblock-action-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.myblock-action-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 2px solid #fff;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+.myblock-action-btn:hover {
+  background: #fff;
+  color: #8b5cf6;
+}
+@media (max-width: 768px) {
+  .myblock-about-container {
+    padding: 40px 16px;
+  }
+  .myblock-about-section {
+    padding: 40px 16px;
+  }
+  .myblock-name {
+    font-size: 2.2rem;
+  }
+  .myblock-about-title {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 640px) {
+  .myblock-about-container {
+    padding: 20px 8px;
+  }
+  .myblock-about-section {
+    padding: 20px 8px;
+  }
+  .myblock-name {
+    font-size: 1.5rem;
+  }
+  .myblock-about-title {
+    font-size: 1.5rem;
+  }
+  .myblock-tagline {
+    font-size: 0.95rem;
+  }
+  .myblock-about-text {
+    font-size: 0.9rem;
+  }
+  .myblock-action-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .myblock-action-btn {
+    text-align: center;
+    padding: 10px 16px;
+  }
+  .myblock-profile-image {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+}
+</style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--color-text-dark);
-            background-color: var(--color-gray-light);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .about-container {
-            max-width: 800px;
-            margin: 0 auto;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 60px 40px;
-        }
-
-        .profile-image {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            margin-bottom: 40px;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.02);
-        }
-
-        .name-section {
-            text-align: center;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .name {
-            font-size: 3rem;
-            font-weight: 300;
-            margin-bottom: 10px;
-            color: var(--color-text-dark);
-            line-height: 1.2;
-        }
-
-        .tagline {
-            font-size: 1.125rem;
-            color: var(--color-text-light);
-            margin-bottom: 10px;
-            font-weight: 400;
-        }
-
-        .email-btn {
-            display: inline-block;
-            background-color: var(--color-purple);
-            color: var(--color-white);
-            padding: 14px 40px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--color-purple);
-            cursor: pointer;
-        }
-
-        .email-btn:hover {
-            background-color: transparent;
-            color: var(--color-purple);
-            border-color: var(--color-purple);
-        }
-
-        .email-btn:focus,
-        .action-btn:focus {
-            outline: 3px solid var(--color-text-dark);
-            outline-offset: 2px;
-        }
-
-        .email-btn:focus:not(:focus-visible),
-        .action-btn:focus:not(:focus-visible) {
-            outline: none;
-        }
-
-        .about-section {
-            background-color: var(--color-purple);
-            padding: 60px 50px;
-            width: 100%;
-            max-width: 800px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-content {
-            max-width: 100%;
-        }
-
-        .about-title {
-            font-size: 3rem;
-            font-weight: 300;
-            margin-bottom: 30px;
-            color: var(--color-white);
-            position: relative;
-            padding-bottom: 20px;
-        }
-
-        .about-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 2px;
-            background-color: var(--color-white);
-        }
-
-        .about-text {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--color-white);
-            margin-bottom: 40px;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: flex-start;
-        }
-
-        .action-btn {
-            padding: 12px 30px;
-            font-size: 1rem;
-            font-weight: 500;
-            text-decoration: none;
-            border: 2px solid var(--color-white);
-            background-color: transparent;
-            color: var(--color-white);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .action-btn:hover {
-            background-color: var(--color-white);
-            color: var(--color-purple);
-        }
-
-        @media (max-width: 768px) {
-            .about-container {
-                padding: 40px 30px;
-            }
-
-            .about-section {
-                padding: 40px 30px;
-            }
-
-            .name {
-                font-size: 2.5rem;
-            }
-
-            .about-title {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .about-container {
-                padding: 30px 20px;
-            }
-
-            .about-section {
-                padding: 30px 20px;
-            }
-
-            .name {
-                font-size: 2rem;
-            }
-
-            .about-title {
-                font-size: 2rem;
-            }
-
-            .tagline {
-                font-size: 1rem;
-            }
-
-            .about-text {
-                font-size: 0.95rem;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .action-btn {
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <main class="about-container">
-       <!-- Hero image: eager load for LCP, async decoding to not block rendering -->
-       <img src="https://quantuminvestor.net/wp-content/uploads/2025/11/111.jpg" 
-           alt="Michael Gavrilov - AI-focused investing enthusiast" 
-           class="profile-image"
-           loading="eager"
-           decoding="async"
-           width="400"
-           height="400">
-        
-        <header class="name-section">
-            <h1 class="name">Michael Gavrilov</h1>
-            <p class="tagline">AI-focused investing enthusiast</p>
-            <a href="mailto:michael@quantuminvestor.net" class="email-btn">Email Me</a>
-        </header>
-
-        <section class="about-section" aria-label="About Michael Gavrilov">
-            <div class="about-content">
-                <h2 class="about-title">About Me</h2>
-                <p class="about-text">
-                    I'm a seasoned technology professional and investment enthusiast based in New York City, combining two decades of enterprise tech experience with a passion for AI-assisted portfolio management. After 20 years of investing in the stock market, I'm now exploring a fascinating question: can generative AI truly transform how we invest? As the creator of Quantum Investor Digest, I'm on a mission to find out whether generative AI can replace traditional investment advisory firms for everyday investors like you and me. Through my writing, I share what I'm learning at the intersection of AI, investing, and practical strategies that give modern investors a real edge.
-                </p>
-                <div class="action-buttons">
-                    <a href="https://www.linkedin.com/in/mgavrilov/" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="action-btn"
-                       aria-label="Visit Michael Gavrilov's LinkedIn profile">Connect On LinkedIn</a>
-                    <a href="https://tinyurl.com/michaelgavrilov" 
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="action-btn"
-                       aria-label="View Michael Gavrilov's Resume">Download My Resume</a>
-                </div>
+<main class="myblock-about-container" role="main">
+   <img src="https://quantuminvestor.net/wp-content/uploads/2025/11/111.jpg" 
+     alt="Michael Gavrilov - AI-focused investing enthusiast" 
+     class="myblock-profile-image"
+     loading="lazy"
+     decoding="async">
+    <header class="myblock-name-section">
+        <h1 class="myblock-name">Michael Gavrilov</h1>
+        <p class="myblock-tagline">AI-focused investing enthusiast</p>
+  <a href="mailto:michael@quantuminvestor.net" class="myblock-email-btn" tabindex="0">Email Me</a>
+    </header>
+    <section class="myblock-about-section" aria-label="About Michael Gavrilov">
+        <div class="myblock-about-content">
+            <h2 class="myblock-about-title">About Me</h2>
+            <p class="myblock-about-text">
+                I'm a seasoned technology professional and investment enthusiast based in New York City, combining two decades of enterprise tech experience with a passion for AI-assisted portfolio management. After 20 years of investing in the stock market, I'm now exploring a fascinating question: can generative AI truly transform how we invest? As the creator of Quantum Investor Digest, I'm on a mission to find out whether generative AI can replace traditional investment advisory firms for everyday investors like you and me. Through my writing, I share what I'm learning at the intersection of AI, investing, and practical strategies that give modern investors a real edge.
+            </p>
+            <div class="myblock-action-buttons">
+           <a href="https://www.linkedin.com/in/mgavrilov/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="myblock-action-btn"
+             aria-label="Visit Michael Gavrilov's LinkedIn profile"
+             tabindex="0">Connect On LinkedIn</a>
+           <a href="https://tinyurl.com/michaelgavrilov" 
+             target="_blank"
+             rel="noopener noreferrer"
+             class="myblock-action-btn"
+             aria-label="View Michael Gavrilov's Resume"
+             tabindex="0">Download My Resume</a>
             </div>
-        </section>
-    </main>
-</body>
-</html>
+        </div>
+    </section>
+</main>
