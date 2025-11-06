@@ -1,0 +1,123 @@
+<style>
+.myblock-portfolio-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: inherit;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  table-layout: fixed;
+  contain: layout style;
+}
+
+.myblock-portfolio-table thead tr {
+  background-color: #8B7AB8;
+  color: white;
+  text-align: left;
+}
+
+.myblock-portfolio-table th,
+.myblock-portfolio-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #E8E8E8;
+  text-align: right;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.myblock-portfolio-table th:first-child,
+.myblock-portfolio-table td:first-child {
+  text-align: left;
+}
+
+.myblock-portfolio-table tbody tr {
+  background-color: white;
+}
+
+.myblock-portfolio-table tbody tr:nth-child(even) {
+  background-color: #F9F9F9;
+}
+
+.myblock-portfolio-table tbody tr:hover {
+  background-color: #F0F0F0;
+}
+
+.myblock-portfolio-table .positive {
+  color: #2E7D32;
+  font-weight: 600;
+}
+
+.myblock-portfolio-table .negative {
+  color: #C62828;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 900px) {
+  .myblock-portfolio-table {
+    font-size: 14px;
+  }
+  .myblock-portfolio-table th,
+  .myblock-portfolio-table td {
+    padding: 12px 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .myblock-portfolio-table {
+    font-size: 13px;
+  }
+  .myblock-portfolio-table th,
+  .myblock-portfolio-table td {
+    padding: 10px 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .myblock-portfolio-table {
+    font-size: 12px;
+  }
+  .myblock-portfolio-table th,
+  .myblock-portfolio-table td {
+    padding: 8px 6px;
+  }
+}
+</style>
+
+<table class="myblock-portfolio-table" aria-label="Portfolio performance comparison">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Oct 9</th>
+      <th>Oct 30</th>
+      <th>Nov 6</th>
+      <th>Weekly Change</th>
+      <th>Total Return</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background: white;">
+      <td style="padding: 14px 16px; border-bottom: 1px solid #E8E8E8; font-weight: 600;">GenAi Chosen ($)</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">10,000</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">10,458</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">10,142</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #C62828; font-weight: 600;">-3.02%</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #2E7D32; font-weight: 600;">+1.42%</td>
+    </tr>
+    <tr>
+      <td style="padding: 14px 16px; border-bottom: 1px solid #E8E8E8; font-weight: 600;">S&P 500 (Index)</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">6,688</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">6,862</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">6,720</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #C62828; font-weight: 600;">-2.07%</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #2E7D32; font-weight: 600;">+0.48%</td>
+    </tr>
+    <tr style="background: white;">
+      <td style="padding: 14px 16px; border-bottom: 1px solid #E8E8E8; font-weight: 600;">Bitcoin ($)</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">123,353</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">107,341</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">102,769</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #C62828; font-weight: 600;">-4.26%</td>
+      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #C62828; font-weight: 600;">-16.69%</td>
+    </tr>
+  </tbody>
+</table>
