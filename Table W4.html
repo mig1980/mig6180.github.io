@@ -1,123 +1,399 @@
 <style>
+.myblock-performance-snapshot {
+  margin: 20px 0;
+  font-family: inherit;
+  overflow-x: visible;
+}
 .myblock-portfolio-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
-  font-family: inherit;
-  font-size: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
   table-layout: fixed;
   contain: layout style;
 }
-
 .myblock-portfolio-table thead tr {
-  background-color: #8B7AB8;
+  background: #8B7AB8;
   color: white;
-  text-align: left;
+  font-weight: bold;
 }
-
-.myblock-portfolio-table th,
-.myblock-portfolio-table td {
-  padding: 14px 16px;
-  border-bottom: 1px solid #E8E8E8;
+.myblock-portfolio-table th {
+  padding: 16px 12px;
+  text-align: left;
+  border: 1px solid #E5E5E5;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.myblock-portfolio-table th:not(:first-child) {
   text-align: right;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
-
-.myblock-portfolio-table th:first-child,
-.myblock-portfolio-table td:first-child {
+.myblock-portfolio-table td {
+  padding: 14px 12px;
+  border: 1px solid #E5E5E5;
+  font-size: 14px;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.myblock-portfolio-table .asset-name {
+  font-weight: 600;
   text-align: left;
+  white-space: normal;
+  min-width: 120px;
 }
-
-.myblock-portfolio-table tbody tr {
-  background-color: white;
+.myblock-portfolio-table td:not(.asset-name) {
+  text-align: right;
 }
-
 .myblock-portfolio-table tbody tr:nth-child(even) {
-  background-color: #F9F9F9;
+  background: #F9F9FB;
 }
-
-.myblock-portfolio-table tbody tr:hover {
-  background-color: #F0F0F0;
-}
-
 .myblock-portfolio-table .positive {
   color: #2E7D32;
   font-weight: 600;
 }
-
 .myblock-portfolio-table .negative {
   color: #C62828;
   font-weight: 600;
 }
-
-@media screen and (max-width: 900px) {
-  .myblock-portfolio-table {
-    font-size: 14px;
-  }
-  .myblock-portfolio-table th,
-  .myblock-portfolio-table td {
-    padding: 12px 10px;
-  }
+.myblock-portfolio-table tbody tr {
+  transition: background-color 0.2s ease;
 }
-
-@media screen and (max-width: 768px) {
-  .myblock-portfolio-table {
-    font-size: 13px;
-  }
+.myblock-portfolio-table tbody tr:hover {
+  background: #F8F5FF;
+}
+@media (max-width: 900px) {
   .myblock-portfolio-table th,
   .myblock-portfolio-table td {
     padding: 10px 8px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .myblock-portfolio-table {
     font-size: 12px;
   }
+  .myblock-portfolio-table th {
+    font-size: 11px;
+  }
+  .myblock-portfolio-table .asset-name {
+    min-width: 100px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
   .myblock-portfolio-table th,
   .myblock-portfolio-table td {
-    padding: 8px 6px;
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+  .myblock-portfolio-table th {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  .myblock-portfolio-table .asset-name {
+    min-width: 70px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 480px) {
+  .myblock-portfolio-table th,
+  .myblock-portfolio-table td {
+    padding: 5px 3px;
+    font-size: 10px;
+  }
+  .myblock-portfolio-table th {
+    font-size: 9px;
+    line-height: 1.2;
+  }
+  .myblock-portfolio-table .asset-name {
+    min-width: 60px;
+    font-size: 10px;
   }
 }
 </style>
 
-<table class="myblock-portfolio-table" aria-label="Portfolio performance comparison">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Oct 9</th>
-      <th>Oct 30</th>
-      <th>Nov 6</th>
-      <th>Weekly Change</th>
-      <th>Total Return</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="background: white;">
-      <td style="padding: 14px 16px; border-bottom: 1px solid #E8E8E8; font-weight: 600;">GenAi Chosen ($)</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">10,000</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">10,458</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">10,142</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #C62828; font-weight: 600;">-3.02%</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #2E7D32; font-weight: 600;">+1.42%</td>
-    </tr>
-    <tr>
-      <td style="padding: 14px 16px; border-bottom: 1px solid #E8E8E8; font-weight: 600;">S&P 500 (Index)</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">6,688</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">6,862</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">6,720</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #C62828; font-weight: 600;">-2.07%</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #2E7D32; font-weight: 600;">+0.48%</td>
-    </tr>
-    <tr style="background: white;">
-      <td style="padding: 14px 16px; border-bottom: 1px solid #E8E8E8; font-weight: 600;">Bitcoin ($)</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">123,353</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">107,341</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8;">102,769</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #C62828; font-weight: 600;">-4.26%</td>
-      <td style="padding: 14px 16px; text-align: right; border-bottom: 1px solid #E8E8E8; color: #C62828; font-weight: 600;">-16.69%</td>
-    </tr>
-  </tbody>
-</table>
+<div class="myblock-performance-snapshot">
+  <table class="myblock-portfolio-table" aria-label="Portfolio performance comparison">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Oct 9</th>
+        <th>Oct 30</th>
+        <th>Nov 6</th>
+        <th>Weekly<br>Change</th>
+        <th>Total<br>Return</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="asset-name">GenAi Chosen ($)</td>
+        <td>10,000</td>
+        <td>10,458</td>
+        <td>10,142</td>
+        <td class="negative">-3.02%</td>
+        <td class="positive">+1.42%</td>
+      </tr>
+      <tr>
+        <td class="asset-name">S&amp;P 500 (Index)</td>
+        <td>6,688</td>
+        <td>6,862</td>
+        <td>6,720</td>
+        <td class="negative">-2.07%</td>
+        <td class="positive">+0.48%</td>
+      </tr>
+      <tr>
+        <td class="asset-name">Bitcoin ($)</td>
+        <td>123,353</td>
+        <td>107,341</td>
+        <td>102,769</td>
+        <td class="negative">-4.26%</td>
+        <td class="negative">-16.69%</td>
+      </tr>
+    </tbody>
+  </table>
+
+<style>
+.myblock-chart-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: inherit;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.myblock-chart-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C3E50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.myblock-chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.myblock-chart-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.myblock-chart-grid-line {
+  stroke: #E8E8E8;
+  stroke-width: 1;
+  stroke-dasharray: 4,4;
+}
+
+.myblock-chart-axis {
+  stroke: #2C3E50;
+  stroke-width: 2;
+}
+
+.myblock-chart-label {
+  font-size: 12px;
+  fill: #666;
+  font-family: inherit;
+}
+
+.myblock-chart-line-genai {
+  fill: none;
+  stroke: #8B7AB8;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.myblock-chart-line-sp500 {
+  fill: none;
+  stroke: #2E7D32;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 6,4;
+}
+
+.myblock-chart-line-bitcoin {
+  fill: none;
+  stroke: #C62828;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 2,2;
+}
+
+.myblock-chart-dot {
+  r: 5;
+}
+
+.myblock-chart-dot-genai {
+  fill: #8B7AB8;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.myblock-chart-dot-sp500 {
+  fill: #2E7D32;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.myblock-chart-dot-bitcoin {
+  fill: #C62828;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.myblock-chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.myblock-chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #2C3E50;
+}
+
+.myblock-chart-legend-line {
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.myblock-legend-genai {
+  background: #8B7AB8;
+}
+
+.myblock-legend-sp500 {
+  background: #2E7D32;
+}
+
+.myblock-legend-bitcoin {
+  background: #C62828;
+}
+
+@media screen and (max-width: 768px) {
+  .myblock-chart-container {
+    padding: 15px;
+  }
+  .myblock-chart-wrapper {
+    height: 300px;
+  }
+  .myblock-chart-title {
+    font-size: 18px;
+  }
+  .myblock-chart-label {
+    font-size: 10px;
+  }
+  .myblock-chart-legend {
+    gap: 15px;
+  }
+  .myblock-chart-legend-item {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .myblock-chart-container {
+    padding: 10px;
+  }
+  .myblock-chart-wrapper {
+    height: 250px;
+  }
+  .myblock-chart-title {
+    font-size: 16px;
+  }
+  .myblock-chart-label {
+    font-size: 9px;
+  }
+  .myblock-chart-legend {
+    gap: 10px;
+  }
+  .myblock-chart-legend-item {
+    font-size: 11px;
+  }
+}
+</style>
+
+<div class="myblock-chart-container">
+  <div class="myblock-chart-title">Performance Since Inception (Normalized to 100)</div>
+  
+  <div class="myblock-chart-wrapper">
+    <svg class="myblock-chart-svg" viewBox="0 0 900 400" preserveAspectRatio="xMidYMid meet">
+      <line class="myblock-chart-grid-line" x1="80" y1="50" x2="850" y2="50"/>
+      <line class="myblock-chart-grid-line" x1="80" y1="125" x2="850" y2="125"/>
+      <line class="myblock-chart-grid-line" x1="80" y1="200" x2="850" y2="200"/>
+      <line class="myblock-chart-grid-line" x1="80" y1="275" x2="850" y2="275"/>
+      <line class="myblock-chart-grid-line" x1="80" y1="350" x2="850" y2="350"/>
+      
+      <text class="myblock-chart-label" x="65" y="55" text-anchor="end">106</text>
+      <text class="myblock-chart-label" x="65" y="130" text-anchor="end">103</text>
+      <text class="myblock-chart-label" x="65" y="205" text-anchor="end">100</text>
+      <text class="myblock-chart-label" x="65" y="280" text-anchor="end">97</text>
+      <text class="myblock-chart-label" x="65" y="355" text-anchor="end">94</text>
+      
+      <text class="myblock-chart-label" x="80" y="375" text-anchor="middle">Oct 9</text>
+      <text class="myblock-chart-label" x="272" y="375" text-anchor="middle">Oct 16</text>
+      <text class="myblock-chart-label" x="464" y="375" text-anchor="middle">Oct 23</text>
+      <text class="myblock-chart-label" x="656" y="375" text-anchor="middle">Oct 30</text>
+      <text class="myblock-chart-label" x="850" y="375" text-anchor="middle">Nov 6</text>
+      
+      <line class="myblock-chart-axis" x1="80" y1="50" x2="80" y2="350"/>
+      <line class="myblock-chart-axis" x1="80" y1="350" x2="850" y2="350"/>
+      
+      <polyline class="myblock-chart-line-genai" points="80,200 272,124 464,118 656,155 850,195"/>
+      <polyline class="myblock-chart-line-sp500" points="80,200 272,200 464,187 656,174 850,190"/>
+      <polyline class="myblock-chart-line-bitcoin" points="80,200 272,290 464,305 656,308 850,333"/>
+      
+      <circle class="myblock-chart-dot myblock-chart-dot-genai" cx="80" cy="200"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-genai" cx="272" cy="124"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-genai" cx="464" cy="118"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-genai" cx="656" cy="155"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-genai" cx="850" cy="195"/>
+      
+      <circle class="myblock-chart-dot myblock-chart-dot-sp500" cx="80" cy="200"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-sp500" cx="272" cy="200"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-sp500" cx="464" cy="187"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-sp500" cx="656" cy="174"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-sp500" cx="850" cy="190"/>
+      
+      <circle class="myblock-chart-dot myblock-chart-dot-bitcoin" cx="80" cy="200"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-bitcoin" cx="272" cy="290"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-bitcoin" cx="464" cy="305"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-bitcoin" cx="656" cy="308"/>
+      <circle class="myblock-chart-dot myblock-chart-dot-bitcoin" cx="850" cy="333"/>
+      
+      <text class="myblock-chart-label" x="272" y="115" text-anchor="middle" style="font-weight: 600; fill: #8B7AB8;">105.57</text>
+      <text class="myblock-chart-label" x="464" y="109" text-anchor="middle" style="font-weight: 600; fill: #8B7AB8;">106.02</text>
+      <text class="myblock-chart-label" x="850" y="186" text-anchor="middle" style="font-weight: 600; fill: #8B7AB8;">101.42</text>
+    </svg>
+  </div>
+  
+  <div class="myblock-chart-legend">
+    <div class="myblock-chart-legend-item">
+      <div class="myblock-chart-legend-line myblock-legend-genai"></div>
+      <span><strong>GenAi Chosen</strong> (+1.42%)</span>
+    </div>
+    <div class="myblock-chart-legend-item">
+      <div class="myblock-chart-legend-line myblock-legend-sp500"></div>
+      <span><strong>S&P 500</strong> (+0.48%)</span>
+    </div>
+    <div class="myblock-chart-legend-item">
+      <div class="myblock-chart-legend-line myblock-legend-bitcoin"></div>
+      <span><strong>Bitcoin</strong> (-16.69%)</span>
+    </div>
+  </div>
+</div>
