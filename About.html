@@ -17,8 +17,10 @@
   width: 100%;
   max-width: 400px;
   margin: 0 auto 40px auto;
-  border-radius: 8px;
+  border-radius: 50%;
   transition: transform 0.3s;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 .myblock-profile-image:hover {
   transform: scale(1.03);
@@ -69,7 +71,7 @@
   outline: none;
 }
 .myblock-about-section {
-  background-color: #8b5cf6;
+  background-color: transparent;
   padding: 60px 50px;
   width: 100%;
   max-width: 800px;
@@ -82,7 +84,7 @@
   font-size: 3rem;
   font-weight: 300;
   margin-bottom: 30px;
-  color: #fff;
+  color: #1f2937;
   position: relative;
   padding-bottom: 20px;
 }
@@ -93,12 +95,12 @@
   left: 0;
   width: 80px;
   height: 2px;
-  background-color: #fff;
+  background-color: #1f2937;
 }
 .myblock-about-text {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #fff;
+  color: #1f2937;
   margin-bottom: 40px;
 }
 .myblock-action-buttons {
@@ -112,16 +114,16 @@
   font-size: 1rem;
   font-weight: 500;
   text-decoration: none;
-  border: 2px solid #fff;
+  border: 2px solid #8b5cf6;
   background: none;
-  color: #fff;
+  color: #8b5cf6;
   cursor: pointer;
   border-radius: 6px;
   transition: background 0.3s, color 0.3s;
 }
 .myblock-action-btn:hover {
-  background: #fff;
-  color: #8b5cf6;
+  background: #8b5cf6;
+  color: #fff;
 }
 @media (max-width: 768px) {
   .myblock-about-container {
@@ -139,40 +141,52 @@
 }
 @media (max-width: 640px) {
   .myblock-about-container {
-    padding: 20px 8px;
+    padding: 10px 2vw;
   }
   .myblock-about-section {
-    padding: 20px 8px;
+    padding: 10px 2vw;
+    box-shadow: none;
   }
   .myblock-name {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .myblock-about-title {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    padding-bottom: 10px;
   }
   .myblock-tagline {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   .myblock-about-text {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
   }
   .myblock-action-buttons {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    width: 100%;
   }
   .myblock-action-btn {
     text-align: center;
-    padding: 10px 16px;
+    padding: 10px 8px;
+    font-size: 0.95rem;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
   }
   .myblock-profile-image {
-    max-width: 100%;
-    margin-bottom: 24px;
+    max-width: 90vw;
+    margin-bottom: 16px;
+    height: auto;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
   }
 }
 </style>
 
 <main class="myblock-about-container" role="main">
-   <img src="https://quantuminvestor.net/wp-content/uploads/2025/11/111.jpg" 
+   <img src="https://quantuminvestor.net/wp-content/uploads/2025/11/111-1-e1762885188230.jpg" 
      alt="Michael Gavrilov - AI-focused investing enthusiast" 
      class="myblock-profile-image"
      loading="lazy"
@@ -195,7 +209,7 @@
              class="myblock-action-btn"
              aria-label="Visit Michael Gavrilov's LinkedIn profile"
              tabindex="0">Connect On LinkedIn</a>
-           <a href="https://tinyurl.com/michaelgavrilov" 
+           <a href="https://quantuminvestor.net/GM" 
              target="_blank"
              rel="noopener noreferrer"
              class="myblock-action-btn"
