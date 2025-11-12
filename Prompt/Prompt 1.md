@@ -633,4 +633,9 @@ Before finalizing analysis:
 
 OUTPUT: Once analysis is complete, pass all data, calculations, and recommendation to PROMPT 2: Blog Post Content Writer for content generation.
 
+Provide:
+The list of holdings
+The updated Portfolio History table.
+Remind to update Prompt 1 with this data
+
 END OF PROMPT 1
